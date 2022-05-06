@@ -41,12 +41,17 @@ namespace TaxCalculator
  *                                                                      |             *
  * 3-C. Return the tax at the end of the method.                        |             *
  * ***********************************************************************************/
+
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             decimal income = Convert.ToDecimal(txtIncome.Text);
+            decimal tax = CalculateTax(income, tax);
 
-            decimal tax = 0m;
+            txtTax.Text = tax.ToString();
+        }
 
+        private static decimal CalculateTax(decimal income, decimal tax)
+        {
             if (income <= 9875)
                 tax = (int)(income * .10m);
             else if (income > 9875 && income <= 40125)
@@ -61,23 +66,22 @@ namespace TaxCalculator
                 tax = 47367.5m + (int)((income - 518400) * .35m);
             else if (income > 518401)
                 tax = 156235m + (int)((income - 518400) * .37m);
-
-            txtTax.Text = tax.ToString();
+            return tax;
         }
 
 
-/* ************************************************************************************
- * 4. Modify the statement in the btnCalculate_Click() event handler    |   McKee     *
- *    that declares the tax variable so it gets its value by calling    |   &         *
- *    the CalculateTax() method.                                        |   Tepper    *
- * ***********************************************************************************/
+/* ***********************************************************************************
+* 4. Modify the statement in the btnCalculate_Click() event handler    |   McKee     *
+*    that declares the tax variable so it gets its value by calling    |   &         *
+*    the CalculateTax() method.                                        |   Tepper    *
+* ***********************************************************************************/
 
 
 
-/* ************************************************************************************
- * 5. Create an event handler that clears the Income Tax Owed text box  |   McKee  &  *
- *    if the user changes the value in the Taxable Income text box.     |   Tepper    *
- * ***********************************************************************************/
+/* ***********************************************************************************
+* 5. Create an event handler that clears the Income Tax Owed text box  |   McKee  &  *
+*    if the user changes the value in the Taxable Income text box.     |   Tepper    *
+* ***********************************************************************************/
 
 
         private void btnExit_Click(object sender, EventArgs e)
