@@ -42,16 +42,24 @@ namespace TaxCalculator
  * 3-C. Return the tax at the end of the method.                        |             *
  * ***********************************************************************************/
 
+
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             decimal income = Convert.ToDecimal(txtIncome.Text);
-            decimal tax = CalculateTax(income, tax);
+
+            // 3-B. Declare variable for tax at the beginning of CalculateTax() Method
+            // 4. Modify the btnCalculate_Click() event handler so it gets its value by calling
+            //    the CalculateTax() method
+            decimal tax = 0m; 
+            tax = CalculateTax(income, tax);
 
             txtTax.Text = tax.ToString();
         }
 
+        // 2-A. Code a declaration for a private method named CalculateTax()
         private static decimal CalculateTax(decimal income, decimal tax)
         {
+            // 3-A. Move the if-else statement to the CalculateTax() method
             if (income <= 9875)
                 tax = (int)(income * .10m);
             else if (income > 9875 && income <= 40125)
@@ -66,16 +74,8 @@ namespace TaxCalculator
                 tax = 47367.5m + (int)((income - 518400) * .35m);
             else if (income > 518401)
                 tax = 156235m + (int)((income - 518400) * .37m);
-            return tax;
+            return tax; // 3-C. Code should return tax at the end of the method
         }
-
-
-/* ***********************************************************************************
-* 4. Modify the statement in the btnCalculate_Click() event handler    |   McKee     *
-*    that declares the tax variable so it gets its value by calling    |   &         *
-*    the CalculateTax() method.                                        |   Tepper    *
-* ***********************************************************************************/
-
 
 
 /* ***********************************************************************************
