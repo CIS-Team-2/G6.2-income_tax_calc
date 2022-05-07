@@ -26,44 +26,34 @@ namespace TaxCalculator
         {
             InitializeComponent();
         }
-/* ************************************************************************************
- * 2. Code the declaration for a private method named CalculateTax()    |             *
- *    The method should:                                                |             *
- *                                                                      |             *
- *          A. Receive the income amount                                |             *
- *          B. Return the tax amount                                    |             *
- *                                                                      |   McKee     *
- * 3-A. Move the if-else statement in the btnCalculate_Click() event    |   &         *
- *    handler to the CalculateTax() method.                             |   Tepper    *
- *                                                                      |             *
- * 3-B. Declare a variable for the tax at the beginning of the          |             *
- *    CalculateTax() method.                                            |             *
- *                                                                      |             *
- * 3-C. Return the tax at the end of the method.                        |             *
- * ***********************************************************************************/
+        /* ************************************************************************************
+         * 2. Code the declaration for a private method named CalculateTax()    |             *
+         *    The method should:                                                |             *
+         *                                                                      |             *
+         *          A. Receive the income amount                                |             *
+         *          B. Return the tax amount                                    |             *
+         *                                                                      |   McKee     *
+         * 3-A. Move the if-else statement in the btnCalculate_Click() event    |   &         *
+         *    handler to the CalculateTax() method.                             |   Tepper    *
+         *                                                                      |             *
+         * 3-B. Declare a variable for the tax at the beginning of the          |             *
+         *    CalculateTax() method.                                            |             *
+         *                                                                      |             *
+         * 3-C. Return the tax at the end of the method.                        |             *
+         * ***********************************************************************************/
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             decimal income = Convert.ToDecimal(txtIncome.Text);
 
+            // 3-B. Declare variable for tax at the beginning of CalculateTax() Method
+            // 4. Modify the btnCalculate_Click() event handler so it gets its value by calling
+            //    the CalculateTax() method
             decimal tax = 0m;
-
-            if (income <= 9875)
-                tax = (int)(income * .10m);
-            else if (income > 9875 && income <= 40125)
-                tax = 987.5m + (int)((income - 9875) * .12m);
-            else if (income > 40125 && income <= 85525)
-                tax = 4617.5m + (int)((income - 40125) * .22m);
-            else if (income > 85525 && income <= 163300)
-                tax = 14605.5m + (int)((income - 85525) * .24m);
-            else if (income > 163300 && income <= 207350)
-                tax = 33271.5m + (int)((income - 163300) * .32m);
-            else if (income > 207351 && income <= 518400)
-                tax = 47367.5m + (int)((income - 518400) * .35m);
-            else if (income > 518401)
-                tax = 156235m + (int)((income - 518400) * .37m);
+            tax = CalculateTax(income, tax);
 
             txtTax.Text = tax.ToString();
         }
+    }
 
 
 /* ************************************************************************************
