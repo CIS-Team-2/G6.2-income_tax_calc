@@ -72,7 +72,10 @@ namespace TaxCalculator
  *    the CalculateTax() method.                                        |   Tepper    *
  * ***********************************************************************************/
 
-
+        private void CleartxtTax(object sender, EventArgs e)
+        {
+            txtTax.Text = "";
+        }
 
 /* ************************************************************************************
  * 5. Create an event handler that clears the Income Tax Owed text box  |   McKee  &  *
@@ -83,11 +86,6 @@ namespace TaxCalculator
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void CleartxtTax(object sender, EventArgs e)
-        {
-            txtTax.Text = "";
         }
     }
 }
