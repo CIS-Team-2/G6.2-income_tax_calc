@@ -50,10 +50,11 @@
             // txtIncome
             // 
             this.txtIncome.Location = new System.Drawing.Point(129, 19);
-            this.txtIncome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIncome.Margin = new System.Windows.Forms.Padding(2);
             this.txtIncome.Name = "txtIncome";
             this.txtIncome.Size = new System.Drawing.Size(106, 23);
             this.txtIncome.TabIndex = 0;
+            this.txtIncome.TextChanged += new System.EventHandler(this.CleartxtTax);
             // 
             // label2
             // 
@@ -69,7 +70,7 @@
             // txtTax
             // 
             this.txtTax.Location = new System.Drawing.Point(129, 49);
-            this.txtTax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(2);
             this.txtTax.Name = "txtTax";
             this.txtTax.ReadOnly = true;
             this.txtTax.Size = new System.Drawing.Size(106, 23);
@@ -79,7 +80,7 @@
             // btnCalculate
             // 
             this.btnCalculate.Location = new System.Drawing.Point(43, 86);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(78, 25);
             this.btnCalculate.TabIndex = 4;
@@ -90,7 +91,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(155, 86);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(78, 25);
             this.btnExit.TabIndex = 5;
@@ -98,7 +99,7 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // Form1
+            // frmIncomeTaxCalculator
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -111,8 +112,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIncome);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmIncomeTaxCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Income Tax Calculator";
             this.ResumeLayout(false);

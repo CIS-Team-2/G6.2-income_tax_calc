@@ -84,5 +84,10 @@ namespace TaxCalculator
         {
             this.Close();
         }
+
+        private void CleartxtTax(object sender, EventArgs e)
+        {
+            txtTax.Text = "";
+        }
     }
 }
